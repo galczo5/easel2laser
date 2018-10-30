@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 
 lines = []
@@ -12,10 +14,10 @@ for line in lines:
 
     if 'Z-1' in line:
         result.append(line)
-        result.append('M3 S35\n')
+        result.append('M3 S' + sys.argv[3] + '\n')
 
     elif 'Z1' in line:
-        result.append('M3 S1\n')
+        result.append('M3 S' + sys.argv[4] + '\n')
         result.append(line)
 
     else:
