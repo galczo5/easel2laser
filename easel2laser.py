@@ -12,13 +12,13 @@ for line in lines:
     if 'M3' in line or 'M4' in line:
         continue
 
-    if 'Z-1' in line:
-        result.append(line)
+    # turn on laser
+    if 'Z-' in line:
         result.append('M3 S' + sys.argv[3] + '\n')
 
-    elif 'Z1' in line:
+    # turn off laser
+    elif 'Z' in line:
         result.append('M3 S' + sys.argv[4] + '\n')
-        result.append(line)
 
     else:
         result.append(line)
